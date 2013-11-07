@@ -18,6 +18,8 @@ class PicturesController < ApplicationController
 	end
 
 	def destroy
+		@picture.caption = params[:caption]
+		@picture.source = params[:source]
 		@picture = Picture.find(params[:id])
 		@picture.destroy
 	end
